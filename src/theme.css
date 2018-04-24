@@ -249,6 +249,7 @@ footer {
 
 #photogrid {
 	position: absolute;
+	overflow: hidden;
 	top: 45px;
 	margin: 0.5%;
 	padding-bottom: 0.5%;
