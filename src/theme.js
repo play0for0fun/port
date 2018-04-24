@@ -18,23 +18,30 @@ var bgPhotoIndex = 0;
 
 var randomizeBackground = function() {
 	bgPhotoIndex++;
+
+	var count = $('.bgimg').length;
 	
-	var randomValue = Math.floor( Math.random() * count) + 1;
-	
-	// THIS IS A CRAZY HACK
-	// for some reason .bgimg:nth-child( <5 ) returns null... no idea why.
-	if (randomValue < 5) {
-		randomValue = 5;
+	if (bgPhotoIndex > count) {
+		bgPhotoIndex = 1;
 	}
+	// var randomValue = Math.floor( Math.random() * count) + 1;
+	
+	// // THIS IS A CRAZY HACK
+	// // for some reason .bgimg:nth-child( <5 ) returns null... no idea why.
+	// if (randomValue < 5) {
+	// 	randomValue = 5;
+	// }
 	// END CRAZY HACK
 	
+	console.log('bgPhotoIndex',bgPhotoIndex,count);
 	
 		var element = $('.bgimg:nth-child('+ bgPhotoIndex +')');
 	
 	
-	var image = $(element).data('image');
+	var image = $(element).attr('data-image');
 	
 	bgElement.css('background-image', 'url(' + image + ')');
+
 }
 
 var rotateBackground = function() {

@@ -155,14 +155,13 @@ footer {
 	font-size: 0;
 	background-color: rgba(223, 220, 218, 0.1);
 	border-top: 1px solid rgba(223, 220, 218, 0.2);
-	overflow-y: hidden;
+	overflow: hidden;
 	box-sizing: border-box;
 	
 	perspective: 1000px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
 	
-	overflow-x: scroll;
 	-webkit-overflow-scrolling: touch;
 	white-space:nowrap;
 	

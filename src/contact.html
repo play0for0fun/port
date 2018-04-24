@@ -102,7 +102,7 @@
 <!--/header-->
 		<main>
 			<!--contact--><div id="contact" class="infopage">
-	<h2>Contact Yauheniya</h2>
+	<h2>Contact Solomiya</h2>
 	
 	<form id="contact_form" action="contact.html">
 		<div id="inputcontainer">
@@ -120,16 +120,6 @@
 			</div>
 		</div>
 		
-		<h2>Humanity Verification</h2>
-		<div id="rc"></div>
-<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
-<script type="text/javascript">
-Recaptcha.create(
-  "6LdNyb0SAAAAAJHtSkWzz-iUb1qyEPP1nmNM-UhV", "rc",
-  { theme: "white",  callback: Recaptcha.focus_response_field }
-);
-</script>
-		
 		<button id="contact_button">Send message</button>
 	</form>
 	
@@ -139,26 +129,32 @@ Recaptcha.create(
         e.preventDefault();
         $("#contact_error").hide();
         $("#contact_success").hide();
-        var form_values = $("#contact_form").serializeArray();
-        var params = {};
-        for (var i in form_values) {
-            params[form_values[i].name] = form_values[i].value;
-        }
-        var request = JSON.stringify(params);
+        var form_values = $("#contact_form").serialize();
+        // var params = {};
+        // for (var i in form_values) {
+        //     params[form_values[i].name] = form_values[i].value;
+        // }
+        // var request = JSON.stringify(params);
         $.ajax({
-          url:"/contact ",
+          url:"/ajax/mail.php ",
           type:"POST",
-          data:request,
-          contentType:"application/json; charset=utf-8",
-          dataType:"json",
+          data:form_values,
           success: function(response) {
-            var message = $("#contact_success");
-            message.show();
-            message.html(response.message).fadeIn();
-            return false;
+          	if(response == 'EROOR'){
+
+	            var message = $("#contact_error");
+	            message.show();
+	              message.html('Please fill all the fields').fadeIn();
+	            return false;
+          	}else{
+            	var message = $("#contact_success");
+	            message.show();
+	            message.html('Thank you for contacting me, I will reply you by e-mail shortly.').fadeIn();
+	            return false;
+
+          	}
           },
           error: function(xhr) {
-            Recaptcha.reload();
             var message = $("#contact_error");
             message.show();
             try {
@@ -188,21 +184,22 @@ Recaptcha.create(
 	
 	<!-- ФОНИ -->
 
-			<div class="bgimg" data-image="img/2.jpg"></div>		
-			<div class="bgimg" data-image="img/1.jpg"></div>
-		
-	
-		
-		
-	
-		
-			<div class="bgimg" data-image="img/3.jpg"></div>
-		
-	
-		
-			<div class="bgimg" data-image="img/4.jpg"></div>
-			
-		
+			<div class="bgimg" data-image="img/1920x1080/1.jpg"></div>		
+			<div class="bgimg" data-image="img/1920x1080/2.jpg"></div>
+		    <div class="bgimg" data-image="img/1920x1080/6.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/12.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/100.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/7.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/14.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/116.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/106.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/102.jpg"></div>
+			<div class="bgimg" data-image="img/1920x1080/99.jpg"></div>		
+			<div class="bgimg" data-image="img/1920x1080/101.jpg"></div>
+		    <div class="bgimg" data-image="img/1920x1080/54.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/92.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/86.jpg"></div>
+	        <div class="bgimg" data-image="img/1920x1080/82.jpg"></div>
 
 
 </div>
