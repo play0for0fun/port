@@ -258,10 +258,10 @@ $(document).ready(function() {
 	
 	if (isTouchDevice()) {
 		mainimageTop = 0;
-		windowHeight = $(window).height();
+		windowHeight = window.innerHeight;
 	} else {
 		mainimageTop = $('header').outerHeight();
-		windowHeight = $(window).height() - headerHeight;
+		windowHeight = window.innerHeight - headerHeight;
 	}
 	
 	windowWidth = $(window).width();
@@ -348,11 +348,13 @@ $(document).ready(function() {
 			delay = delay + 25;
 		});
 	});
-	
-	// On window resize
-	$(window).on("resize", function() {
+	function make_height(){
 		headerHeight = $("header").outerHeight();
-		windowHeight = $(window).height() - headerHeight;
+		if(isTouchDevice() == false){
+		
+		windowHeight = window.innerHeight - headerHeight;
+		}else{
+windowHeight = window.innerHeight}
 		windowWidth = $(window).width();
 		
 		photogridElement.css('top', headerHeight);
@@ -365,6 +367,19 @@ $(document).ready(function() {
 				'top': mainimageTop
 			});	
 		}
+	
+	}
+	// On window resize
+	var height_global_timer = false;
+	$(window).on("resize scroll", function() {
+		
+if(height_global_timer ){
+clearTimeout(height_global_timer);
+}
+height_global_timer = setTimeout(function(){
+make_height()
+},50);
+		
 	});
 	
 	// check for home page
