@@ -329,6 +329,18 @@ $(document).ready(function() {
         'width': '99%',
     });
 
+    var  $photos = $('#photos');
+
+    if ($photos.hasClass('postprod') && !isMobile) {
+
+    	$photos.find('.img').each(function(index, el) {
+    		var $this = $(this);
+
+    		$this.zoom({url:$this.attr('data-original')})
+    	});
+
+    };
+
     // place info pages
     infopageElement.css('top', headerHeight);
 

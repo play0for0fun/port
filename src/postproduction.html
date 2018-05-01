@@ -34,6 +34,7 @@
 
 <!-- Load CSS file -->
 <link href="liquid/portfolios-css-reset.css" media="screen" rel="stylesheet" type="text/css">
+<!-- <link href="easyzoom.css" rel="stylesheet" type="text/css"> -->
 <link href="theme.css" media="screen" rel="stylesheet" type="text/css" id="theme_css">
 
 <!-- Load JS files -->
@@ -41,6 +42,7 @@
 <!--[if lt IE 9]>
   <script src="/liquid/html5shiv.js" type="text/javascript"></script>
 <![endif]-->
+<script src="jquery.zoom.min.js" type="text/javascript"></script>
 <script src="theme.js" type="text/javascript"></script>
 
 
@@ -741,11 +743,10 @@
 </div>
 
 <div id="mainimage" >
-	<div id='photos' class='swipe'>
+	<div id='photos' class='swipe postprod'>
 		<div class='swipe-wrap'>
 			
-				<div class="img" data-image="img/1920x1080/1.jpg" data-width="4032" data-height="6048">
-					<a href="img/">email me</a>
+				<div class="img" data-image="img/1920x1080/1.jpg" data-original="img/originals/1.jpg" data-width="4032" data-height="6048">
 					<div class="ui photoinfo hidden">
 							<!-- Photo Title & Description -->
 								<h2 class="phototitle">Photo: Kosher</h2> 
@@ -754,6 +755,7 @@
 							</div>
 
 				<div class="img" data-image="img/1920x1080/146.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/146.jpg"></a>
 					
 					<div class="ui photoinfo hidden">
 							<!-- Photo Title & Description -->
@@ -763,6 +765,7 @@
 				</div>
 
 				<div class="img" data-image="img/1920x1080/2.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/2.jpg"></a>
 					
 					<div class="ui photoinfo hidden">
 							<!-- Photo Title & Description -->
@@ -773,6 +776,7 @@
 				</div>		
 
 				<div class="img" data-image="img/1920x1080/4.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/4.jpg"></a>
 					<div class="ui photoinfo hidden">
 							<!-- Photo Title & Description -->
 								<h2 class="phototitle">Photo: Slava Samoilenko</h2> 
@@ -780,13 +784,18 @@
 				</div>
 
 				<div class="img" data-image="img/1920x1080/5.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/5.jpg"></a>
 					
                 </div>	
 
-                <div class="img" data-image="img/1920x1080/147.jpg" data-width="4032" data-height="6048"></div>
-                <div class="img" data-image="img/1920x1080/145.jpg" data-width="4032" data-height="6048"></div>
-				<div class="img" data-image="img/1920x1080/3.jpg" data-width="4032" data-height="6048"></div>				
+                <div class="img" data-image="img/1920x1080/147.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/147.jpg"></a></div>
+                <div class="img" data-image="img/1920x1080/145.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/145.jpg"></a></div>
+				<div class="img" data-image="img/1920x1080/3.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/3.jpg"></a></div>				
 				<div class="img" data-image="img/1920x1080/142.jpg" data-width="4032" data-height="6048">
+					<a href="img/originals/142.jpg"></a>
 					<div class="ui photoinfo hidden">
 							<!-- Photo Title & Description -->
 								<h2 class="phototitle">Photo: Will Li</h2> 

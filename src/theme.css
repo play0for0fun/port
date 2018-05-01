@@ -396,6 +396,36 @@ footer {
 			background-position: center;
 			background-size: contain;
 		}
+		#photos.postprod .img a{
+
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+		}
+		#photos.postprod .img img{
+			min-height: 100%;
+			position: absolute;
+			display: block;
+		}
+		#photos.postprod .img .img-zoom{
+			
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+			text-align: center;
+			position: absolute;
+		}
+
 			.photoinfo {
 				background-color: rgba(32, 35, 37, 0.8);
 				position: absolute;
