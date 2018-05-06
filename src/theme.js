@@ -329,17 +329,18 @@ $(document).ready(function() {
         'width': '99%',
     });
 
-    var  $photos = $('#photos');
+    // var  $photos = $('#photos');
 
-    if ($photos.hasClass('postprod') && !isMobile) {
+    // if ($photos.hasClass('postprod') && !isMobile) {
 
-    	$photos.find('.img').each(function(index, el) {
-    		var $this = $(this);
+    // 	$photos.find('.img').each(function(index, el) {
+    // 		var $this = $(this);
 
-    		$this.zoom({url:$this.attr('data-original')})
-    	});
+    // 		$this.zoom({url:$this.attr('data-original'),
+    // 					on:'grab'})
+    // 	});
 
-    };
+    // };
 
     // place info pages
     infopageElement.css('top', headerHeight);
@@ -516,12 +517,22 @@ $(document).ready(function() {
     });
 
     // Click photo to toggle photo info
-    photoImageElements.click(function() {
-        mainimageElement.toggleClass('black');
-        $('.ui').toggleClass('hidden');
-        headerElement.toggleClass('opaque');
-    });
+    // photoImageElements.click(function() {
+    //     mainimageElement.toggleClass('black');
+    //     $('.ui').toggleClass('hidden');
+    //     headerElement.toggleClass('opaque');
+    // });
     // Disable photo info fading when clicking photo info links
+    photoImageElements.mouseover(function(){
+
+    	if (!$(this).hasClass('zoom_inited') && !isMobile) {
+    			var $this = $(this);
+	    		$this.zoom({url:$this.attr('data-original'),
+	    					on:'grab'})
+	    		$this.addClass('zoom_inited');
+    	}
+    });
+
     $(".photoinfo a").click(function(e) {
         e.stopPropagation();
     })
